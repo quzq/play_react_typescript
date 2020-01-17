@@ -1,6 +1,15 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import TextContainer from './TextContainer'
+interface ItemList {
+  id: number
+  text: string
+}
+// inputFormに文字を入力しているとき　　（TextInput(子)に渡したい）
+const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  alert(e)
+}
 
 const App: React.FC = () => {
   return (
@@ -18,6 +27,7 @@ const App: React.FC = () => {
         >
           Learn React
         </a>
+        <TextContainer text="hello" handleInputChange={handleInputChange}></TextContainer>
       </header>
     </div>
   );
