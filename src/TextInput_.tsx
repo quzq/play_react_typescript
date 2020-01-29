@@ -1,10 +1,10 @@
-import React from 'react'
+//子コンポーネント
+import React from 'react';
 interface Props {
   text: string
   handleInputChange: (e: React.ChangeEvent<HTMLInputElement>)=>void
-  onSubmit: (text: string) => void
 }
-const TextInput: React.FC<Props> = ({text, handleInputChange, onSubmit}  ) => {
+const TextInput: React.FC<Props> = ({text, handleInputChange}) => {
     return (
         <div>
             <div className="inputForm">
@@ -15,7 +15,6 @@ const TextInput: React.FC<Props> = ({text, handleInputChange, onSubmit}  ) => {
                         value={text}
                         onChange={handleInputChange}
                     />
-                    <button onClick={(e)=> onSubmit(text)} className="btn is-primary">追加</button>
                 </div>
             </div>
         </div>
