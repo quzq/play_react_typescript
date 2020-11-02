@@ -1,5 +1,6 @@
 import React from 'react';
 import TextInput from './TextInput'
+import AxiosTest from './AxiosTest'
 
 // inputFormに文字を入力しているとき　　（TextInput(子)に渡したい）
 const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -14,7 +15,8 @@ const App: React.FC = () => {
   let text = 'foo'  // '123'に変更するとalert('aaaa')は出力されない
   return (
     <div className="App">
-       <TextInput text={text} handleInputChange={handleInputChange}  onSubmit={onSubmit} />
+      <AxiosTest/>
+       {/* <TextInput text={text} handleInputChange={handleInputChange}  onSubmit={onSubmit} /> */}
    </div>
   );
 }
