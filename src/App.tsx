@@ -1,25 +1,53 @@
 import React from 'react';
-import TextInput from './components/TextInput'
-import AxiosTest from './components/AxiosTest'
-import Rects from './components/Rects'
+import { useSelector, useDispatch } from 'react-redux';
+import * as _ from 'lodash';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import {
+  createMuiTheme,
+  ThemeProvider,
+  makeStyles,
+  createStyles,
+  Theme,
+} from '@material-ui/core/styles';
+import { Button } from '@material-ui/core';
+import { jaJP } from '@material-ui/core/locale';
+import { ToastProvider, useToasts, DefaultToastContainer } from 'react-toast-notifications';
+import ErrorBoundary from './errorBoundary';
 
-// inputFormに文字を入力しているとき　　（TextInput(子)に渡したい）
-const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  alert(e.target.value)
-}
-const onSubmit = (text: string) => {
-  if (text.match(/[^0-9]+/)) {
-    alert('aaaa');
-  }
-}
-const App: React.FC = () => {
-  let text = 'foo'  // '123'に変更するとalert('aaaa')は出力されない
+
+const theme = createMuiTheme({}, jaJP);
+
+const ToastContainer = (props: any) => (
+  <DefaultToastContainer
+    css={{}}
+    style={{ position: 'absolute', top: 5, right: 5, zIndex: 99999999 }}
+    {...props}
+  />
+);
+
+const Main = (): JSX.Element => {
+  React.useEffect(() => {
+  }, []);
+
+
   return (
-    <div className="App">
-      <Rects/>
-      {/* <AxiosTest/> */}
-       {/* <TextInput text={text} handleInputChange={handleInputChange}  onSubmit={onSubmit} /> */}
-   </div>
+    <BrowserRouter>
+      <ErrorBoundary>
+        fdsfasdfdsffsdaljlj
+      </ErrorBoundary>
+    </BrowserRouter>
+  );
+};
+
+function App(): JSX.Element {
+  return (
+    <div>
+      <ThemeProvider theme={theme}>
+        <ToastProvider autoDismiss={true} autoDismissTimeout={4000} components={{ ToastContainer }} >
+          <Main />
+        </ToastProvider>
+      </ThemeProvider>
+    </div>
   );
 }
 
