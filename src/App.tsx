@@ -13,6 +13,7 @@ import { Button } from '@material-ui/core';
 import { jaJP } from '@material-ui/core/locale';
 import { ToastProvider, useToasts, DefaultToastContainer } from 'react-toast-notifications';
 import ErrorBoundary from './errorBoundary';
+import ReactMeasure from './samples/reactMeasure'
 
 
 const theme = createMuiTheme({}, jaJP);
@@ -33,7 +34,7 @@ const Main = (): JSX.Element => {
   return (
     <BrowserRouter>
       <ErrorBoundary>
-        fdsfasdfdsffsdaljlj
+        <ReactMeasure />
       </ErrorBoundary>
     </BrowserRouter>
   );
