@@ -14,6 +14,7 @@ import { jaJP } from '@material-ui/core/locale';
 import { ToastProvider, useToasts, DefaultToastContainer } from 'react-toast-notifications';
 import ErrorBoundary from './errorBoundary';
 import ReactMeasure from './samples/reactMeasure'
+import Popup from './samples/popup'
 
 
 const theme = createMuiTheme({}, jaJP);
@@ -34,7 +35,8 @@ const Main = (): JSX.Element => {
   return (
     <BrowserRouter>
       <ErrorBoundary>
-        <ReactMeasure />
+        {/* <ReactMeasure /> */}
+        <Popup />
       </ErrorBoundary>
     </BrowserRouter>
   );
