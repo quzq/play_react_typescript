@@ -33,6 +33,7 @@ export default () => {
         style={{ display: "none" }}
         id="contained-button-file"
         type="file"
+        onChange={() => alert('changed!')}
       />
       <label htmlFor="contained-button-file">
         <Button variant="contained" color="primary" component="span">
