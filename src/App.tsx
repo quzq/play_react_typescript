@@ -14,6 +14,7 @@ import { jaJP } from '@material-ui/core/locale';
 import { ToastProvider, useToasts, DefaultToastContainer } from 'react-toast-notifications';
 import ErrorBoundary from './errorBoundary';
 import ReactMeasure from './samples/reactMeasure'
+import FileInput from './samples/fileInput'
 import Popup from './samples/popup'
 
 
@@ -36,7 +37,8 @@ const Main = (): JSX.Element => {
     <BrowserRouter>
       <ErrorBoundary>
         {/* <ReactMeasure /> */}
-        <Popup />
+        <FileInput />
+        {/* <Popup /> */}
       </ErrorBoundary>
     </BrowserRouter>
   );
